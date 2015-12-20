@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = StripeClerk::VERSION
   s.authors     = ["Basia Klosowska, Anna Góra"]
   s.email       = ["barbaraklosowska@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of StripeClerk."
-  s.description = "TODO: Description of StripeClerk."
+  s.homepage    = "https://github.com/rubyclerks/stripe_clerk"
+  s.summary     = "Stripe Payment method for office_clerk ecommerce system."
+  s.description = s.summary
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
 
   #s.add_development_dependency "sqlite3"
   s.add_dependency "office_clerk"
+  s.add_dependency "stripe"
 end

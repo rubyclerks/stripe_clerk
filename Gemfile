@@ -14,7 +14,6 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 ## STRIPE payment by card
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'office_clerk', :github => "rubyclerks/office_clerk"
 
 group :test do
@@ -32,5 +31,3 @@ group :test do
   gem 'rack_session_access'
   gem 'sqlite3'
 end
-
-
