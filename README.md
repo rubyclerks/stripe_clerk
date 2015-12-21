@@ -51,6 +51,7 @@ In order to use to make charges, you need to have a Stripe account. You can regi
 
 ![stripe](/app/assets/images/stripe.png)
 
+3. Change the logo on the stripe form by adding a your_stripe_logo.png to your assets.
 
 Credits
 ====
@@ -60,5 +61,4 @@ __RubyClerks:__ Thanks to project author and our amazing mentor [Torsten Rüger]
 
 __TeamGirlsCodersWarsaw:__ Thanks to our fantastic coaches: [Jarek](https://github.com/pjar), [Łukasz](https://github.com/lsolniczek), [Tomasz](https://github.com/tomash) and [Piotr](https://github.com/chastell) and our lovely supervisor [Magda](https://github.com/madziaf)!
 
-__Authors:__ [Anna Góra](https://github.com/Czarrrna) & [Barbara Kłosowska](https://github.com/aberracja)
-
+__Authors:__ [Anna Góra](https://github.com/Czarrrna) & [Barbara Kłosowska](https://github.com/aberracja) & [Torsten Ruger](https://github.com/dancinglightning)
