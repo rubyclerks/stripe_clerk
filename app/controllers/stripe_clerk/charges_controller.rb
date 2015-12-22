@@ -3,6 +3,8 @@ require_dependency "stripe_clerk/application_controller"
 module StripeClerk
   class ChargesController < ApplicationController
 
+  include ChargesHelper
+
   def new
   end
 
@@ -12,28 +14,17 @@ module StripeClerk
 
   def create
     order = Order.find( session[:order] )
-    amount = order.total_price
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => order.email ,
       :card  => params[:stripeToken]
     )
 
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => (amount*100).to_i,
-      :description => 'Rails Stripe customer',
-      :currency    => 'eur'
-    )
-
-    order.pay_now
-    order.payment_info = charge.id
-    order.payment_type = "stripe"
-    order.save
+    charge_customer customer.id , order
 
     redirect_to main_app.shop_order_path
 
-  rescue Stripe::CardError => e
+  rescue Stripe::StripeError => e  # nothing must escape, CardError is just a subset
     flash[:error] = e.message
     redirect_to charges_path
   end
