@@ -1,6 +1,6 @@
 fi:
     stripe_clerk:
-      thanks: Kiitos tilauksesta
+      paid: Maksettu
       transfer: Maksa pankilla
       amount: Määrä
       pay_with_card: Maksa kortilla

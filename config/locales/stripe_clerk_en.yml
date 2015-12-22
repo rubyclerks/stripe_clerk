@@ -1,7 +1,7 @@
 en:
     stripe_clerk:
       amount: Amount
-      thanks: Thanks, you paid
+      paid: Paid
       transfer: Money Transfer
       pay_with_card: Pay with card
-      company: "stripe_clerk.company key" 
+      company: "stripe_clerk.company key"
