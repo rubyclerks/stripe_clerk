@@ -52,6 +52,7 @@ In order to use to make charges, you need to have a Stripe account. You can regi
 ![stripe](/app/assets/images/stripe.png)
 
 3. Change the logo on the stripe form by adding a your_stripe_logo.png to your assets.
+4. Add your company name to the for by setting locale key stripe_clerk.company
 
 Credits
 ====

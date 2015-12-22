@@ -1,0 +1,7 @@
+en:
+    stripe_clerk:
+      amount: Amount
+      thanks: Thanks, you paid
+      transfer: Money Transfer
+      pay_with_card: Pay with card
+      company: "stripe_clerk.company key" 

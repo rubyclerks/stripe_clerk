@@ -1,14 +1,19 @@
 = form_tag stripe_clerk.charges_path do
   %article
     %label.amount
-      %span Amount:
+      %span= t("stripe_clerk.amount") + ":"
       = euros order.total_price
   %script.stripe-button{"data-amount" => "#{order.total_price*100}",
                         "data-currency" => "eur",
-                        "data-description" => "Order No. #{order.number}",
+                        "data-description" => "#{t(:order_number)} #{order.number}",
                         "data-key" => Rails.configuration.stripe[:publishable_key],
-                        "data-locale" => "fi",
+                        "data-locale" => "auto",
                         "data-image" => "#{image_url('your_stripe_logo.png')}",
+                        "data-name" => t("stripe_clerk.company"),
+                        "data-panel-label" => t("stripe_clerk.pay_with_card"),
+                        "data-label" => t("stripe_clerk.pay_with_card"),
+                        "data-allow-remember-me" => "false" ,
+                        "data-email" => "#{@order.email}",
                         :src => "https://checkout.stripe.com/checkout.js"}
   %a.custom-button
-    %span Money Transfer
+    %span= t("stripe_clerk.transfer")

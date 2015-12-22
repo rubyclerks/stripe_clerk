@@ -1,0 +1,7 @@
+fi:
+    stripe_clerk:
+      thanks: Kiitos tilauksesta
+      transfer: Maksa pankilla
+      amount: Määrä
+      pay_with_card: Maksa kortilla
+      company: Auringosta Itään, Kuusta Länteen
