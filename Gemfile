@@ -18,7 +18,7 @@ gem 'office_clerk', :github => "rubyclerks/office_clerk"
 
 group :test do
   gem "poltergeist"
-  gem "phantomjs", "1.9.7" , :require => 'phantomjs/poltergeist'
+  gem "phantomjs" , :require => 'phantomjs/poltergeist'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'capybara-screenshot'
