@@ -20,6 +20,6 @@ Gem::Specification.new do |s|
   #s.add_dependency "rails", "4.1.8"
 
   #s.add_development_dependency "sqlite3"
-  s.add_dependency "office_clerk"
+  s.add_dependency "office_clerk" , "~> 0.9"
   s.add_dependency "stripe"
 end
