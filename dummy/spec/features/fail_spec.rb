@@ -14,7 +14,6 @@ describe "pay with stripe", :js => true do
         fill_in "card_number", :with => '4000000000000002'
       fill_in "cc-exp", :with => '11/20'
       fill_in "cc-csc", :with => '123'
-      screenshot_and_open_image
       click_button I18n.t("stripe_clerk.pay_with_card")
       expect(page).to have_content("This card was declined")
     end
