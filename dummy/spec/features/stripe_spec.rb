@@ -8,27 +8,26 @@ describe "pay with stripe", :js => true do
     page.visit shop_order_path
   end
   it "works" do
-    click_button 'Pay with Card'
+    click_button I18n.t("stripe_clerk.pay_with_card")
     stripe_iframe = all('iframe[name=stripe_checkout_app]').last
     Capybara.within_frame stripe_iframe do
-      fill_in "email", :with => 'user@example.com'
       fill_in "card_number", :with => '4242424242424242'
       fill_in "cc-exp", :with => '11/20'
       fill_in "cc-csc", :with => '123'
-      click_button "Pay"
+      click_button I18n.t("stripe_clerk.pay_with_card")
     end
-    expect(page).to have_content("Thanks, you paid")
+    expect(page).to have_content(I18n.t("stripe_clerk.paid"))
   end
 
   it "has errors" do
-    click_button 'Pay with Card'
+    click_button I18n.t("stripe_clerk.pay_with_card")
     stripe_iframe = all('iframe[name=stripe_checkout_app]').last
     Capybara.within_frame stripe_iframe do
-      fill_in "email", :with => 'user@example.com'
-      fill_in "card_number", :with => '4000000000000002'
+        fill_in "card_number", :with => '4000000000000002'
       fill_in "cc-exp", :with => '11/20'
       fill_in "cc-csc", :with => '123'
-      click_button "Pay"
+      screenshot_and_open_image
+      click_button I18n.t("stripe_clerk.pay_with_card")
       expect(page).to have_content("This card was declined")
     end
   end
