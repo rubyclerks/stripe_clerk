@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150924143821) do
 
-  create_table "baskets", force: true do |t|
+  create_table "baskets", force: :cascade do |t|
     t.integer  "kori_id"
     t.string   "kori_type"
     t.decimal  "total_price", default: 0.0
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150924143821) do
     t.datetime "updated_at"
   end
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.integer  "category_id"
     t.boolean  "online",                     default: false
     t.string   "name"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150924143821) do
 
   add_index "categories", ["link"], name: "index_categories_on_link", unique: true
 
-  create_table "clerks", force: true do |t|
+  create_table "clerks", force: :cascade do |t|
     t.string   "email",              default: "",    null: false
     t.boolean  "admin",              default: false
     t.string   "encrypted_password"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20150924143821) do
 
   add_index "clerks", ["email"], name: "index_clerks_on_email", unique: true
 
-  create_table "items", force: true do |t|
+  create_table "items", force: :cascade do |t|
     t.integer  "quantity",   default: 1
     t.float    "price",      default: 0.0
     t.float    "tax",        default: 0.0
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20150924143821) do
     t.datetime "updated_at"
   end
 
-  create_table "orders", force: true do |t|
+  create_table "orders", force: :cascade do |t|
     t.string   "number"
     t.string   "note",           default: ""
     t.string   "email"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20150924143821) do
     t.datetime "updated_at"
   end
 
-  create_table "products", force: true do |t|
+  create_table "products", force: :cascade do |t|
     t.float    "price",                                      null: false
     t.string   "name",                                       null: false
     t.string   "link"
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 20150924143821) do
   add_index "products", ["product_id"], name: "index_products_on_product_id"
   add_index "products", ["supplier_id"], name: "index_products_on_supplier_id"
 
-  create_table "purchases", force: true do |t|
+  create_table "purchases", force: :cascade do |t|
     t.string   "name"
     t.date     "ordered_on"
     t.date     "received_on"
@@ -131,7 +131,7 @@ ActiveRecord::Schema.define(version: 20150924143821) do
     t.datetime "updated_at"
   end
 
-  create_table "suppliers", force: true do |t|
+  create_table "suppliers", force: :cascade do |t|
     t.string   "supplier_name"
     t.string   "address"
     t.datetime "created_at"

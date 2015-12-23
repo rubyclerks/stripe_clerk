@@ -2,11 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# Pick the frameworks you want:
-require "active_record/railtie"
-# require "action_controller/railtie"
-# require "action_mailer/railtie"
-require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 require "stripe_clerk"
@@ -29,4 +24,3 @@ module Dummy
     #config.active_record.raise_in_transactional_callbacks = true
   end
 end
-
