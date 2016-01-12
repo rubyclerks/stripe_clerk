@@ -3,19 +3,17 @@ Summary
 This extension allows you to add Stripe payment module to your shop. You can link it with your Stripe account to charge money for clients'
  orders.
 
-Instalation
+Installation
 ============
 
-To install Stripe, you need to update sales_clerk version.
+Stripe Clerk is used in sales_clerk, you can see how to use it there.
+If you want to use it in your own shop, follow the steps below:
 
-
-This will implement the following changes:
-
-* add stripe_clerk engine by adding the following lines to sales_clerk's Gemfile:
+* add stripe_clerk engine by adding the following lines to your shop's Gemfile:
 
   ` gem 'stripe_clerk' `
 
-  ` gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby' `
+  ` gem 'stripe' `
 
 * add the following line to routes (sales_clerk/config/routes.rb):
 
@@ -27,9 +25,7 @@ This will implement the following changes:
 
 * add styling to sales_clerk's app/assets/stylesheets/sales_clerk.css.scss (link).
 
-* add partial view _payment_stripe.haml (link).
-
-* remove payment_type row from order.haml view and add the following line instead (sales_clerk/app/views/shop/order.haml):
+* add partial view payment_stripe.haml or roll your own view
 
   ` = render :partial => 'payment_stripe', :locals => { :order => @order } `
 
@@ -42,8 +38,8 @@ In order to use to make charges, you need to have a Stripe account. You can regi
 
   Link your credentials from Stripe account (Your Account -> Account setting -> API keys) with environment variables in config/initializers/stripe.rb:
 
-  * publishable_key
-  * secret_key
+  * publishable_key => ENV['STRIPE_PUBLISHABLE_KEY']
+  * secret_key => ENV['STRIPE_SECRET_KEY']
 
   Remember not to put them directly into app!
 
