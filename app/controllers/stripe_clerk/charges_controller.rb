@@ -13,14 +13,14 @@ module StripeClerk
   end
 
   def create
-    order = Order.find( session[:order] )
+    @order = Order.find( session[:order] )
 
     customer = Stripe::Customer.create(
-      :email => order.email ,
+      :email => @order.email ,
       :card  => params[:stripeToken]
     )
 
-    charge_customer customer.id , order
+    charge_customer customer.id , @order
 
     post_charge_hook
 
@@ -32,8 +32,4 @@ module StripeClerk
   end
   end
 
-  private
-  # a possibility to get a mail out or something 
-  def post_charge_hook
-  end
 end
