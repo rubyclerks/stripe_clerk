@@ -22,7 +22,7 @@ module StripeClerk
 
     charge_customer customer.id , @order
 
-    post_charge_hook
+    post_charge_hook if respond_to?(:post_charge_hook)
 
     redirect_to main_app.shop_order_path
 
