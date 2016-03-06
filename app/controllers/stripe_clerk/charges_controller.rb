@@ -22,11 +22,18 @@ module StripeClerk
 
     charge_customer customer.id , order
 
+    post_charge_hook
+
     redirect_to main_app.shop_order_path
 
   rescue Stripe::StripeError => e  # nothing must escape, CardError is just a subset
     flash[:error] = e.message
     redirect_to charges_path
   end
+  end
+
+  private
+  # a possibility to get a mail out or something 
+  def post_charge_hook
   end
 end
