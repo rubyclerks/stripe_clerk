@@ -1,7 +1,7 @@
 fi:
     stripe_clerk:
       paid: Maksettu
-      transfer: Maksa pankilla
+      transfer: Maksa tilisiirrolla
       amount: Määrä
       pay_with_card: Maksa kortilla
       company: Auringosta Itään, Kuusta Länteen
