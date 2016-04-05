@@ -1,4 +1,4 @@
-require_dependency "stripe_clerk/application_controller"
+require_dependency "application_controller"
 
 module StripeClerk
   class ChargesController < ApplicationController
