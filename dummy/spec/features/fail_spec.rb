@@ -9,8 +9,7 @@ describe "pay with stripe", :js => true do
   end
   it "has errors" do
     click_button I18n.t("stripe_clerk.pay_with_card")
-    stripe_iframe = all('iframe[name=stripe_checkout_app]').last
-    Capybara.within_frame stripe_iframe do
+    Capybara.within_frame 'stripe_checkout_app' do
         fill_in "card_number", :with => '4000000000000002'
       fill_in "cc-exp", :with => '11/20'
       fill_in "cc-csc", :with => '123'
